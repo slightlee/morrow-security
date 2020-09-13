@@ -5,23 +5,23 @@
     <!-- 通用查询映射结果 -->
     <resultMap id="BaseResultMap" type="com.morrow.modules.sys.entity.SysMenu">
         <id column="id" property="id" />
-        <result column="name" property="name" />
-        <result column="parent_id" property="parentId" />
+        <result column="title" property="title" />
         <result column="url" property="url" />
-        <result column="perms" property="perms" />
+        <result column="pid" property="pid" />
+        <result column="permissions" property="permissions" />
         <result column="type" property="type" />
         <result column="icon" property="icon" />
-        <result column="order_num" property="orderNum" />
-        <result column="create_by" property="createBy" />
-        <result column="create_time" property="createTime" />
-        <result column="last_update_by" property="lastUpdateBy" />
-        <result column="last_update_time" property="lastUpdateTime" />
-        <result column="del_flag" property="delFlag" />
+        <result column="sort" property="sort" />
+        <result column="hidden" property="hidden" />
+        <result column="creator" property="creator" />
+        <result column="create_date" property="createDate" />
+        <result column="updater" property="updater" />
+        <result column="update_date" property="updateDate" />
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        id, name, parent_id, url, perms, type, icon, order_num, create_by, create_time, last_update_by, last_update_time, del_flag
+        id, title, url, pid, permissions, type, icon, sort, hidden, creator, create_date, updater, update_date
     </sql>
 
 </mapper>

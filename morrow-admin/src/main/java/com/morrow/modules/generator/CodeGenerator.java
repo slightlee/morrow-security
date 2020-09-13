@@ -62,7 +62,7 @@ public class CodeGenerator {
 
         // 数据源配置
         DataSourceConfig dsc = new DataSourceConfig();
-        dsc.setUrl("jdbc:mysql://localhost:3306/kitty?useUnicode=true&useSSL=false&characterEncoding=utf8");
+        dsc.setUrl("jdbc:mysql://localhost:3306/morrow-admin?useUnicode=true&useSSL=false&characterEncoding=utf8");
         // dsc.setSchemaName("public");
         dsc.setDriverName("com.mysql.jdbc.Driver");
         dsc.setUsername("root");
@@ -140,7 +140,7 @@ public class CodeGenerator {
         strategy.setSuperControllerClass("");
         // 写于父类中的公共字段
 //        strategy.setSuperEntityColumns("id");
-        strategy.setInclude(scanner("sys_user,sys_dept,sys_role,sys_menu,sys_user_role,sys_role_dept,sys_role_menu,sys_user_token,sys_log,sys_dict").split(","));
+        strategy.setInclude(scanner("sys_dept,sys_log_error,sys_log_login,sys_log_operation,sys_menu,sys_params,sys_role,sys_role_data_scope,sys_role_menu,sys_role_user,sys_user,sys_user_token").split(","));
         strategy.setControllerMappingHyphenStyle(true);
 //        strategy.setTablePrefix(pc.getModuleName() + "_");
         mpg.setStrategy(strategy);

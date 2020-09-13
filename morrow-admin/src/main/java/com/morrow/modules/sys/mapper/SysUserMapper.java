@@ -6,11 +6,11 @@ import org.apache.ibatis.annotations.Mapper;
 
 /**
  * <p>
- * 用户 Mapper 接口
+ * 系统用户 Mapper 接口
  * </p>
  *
  * @author morrow
- * @since 2020-09-05
+ * @since 2020-09-13
  */
 @Mapper
 public interface SysUserMapper extends BaseMapper<SysUser> {

@@ -5,19 +5,19 @@
     <!-- 通用查询映射结果 -->
     <resultMap id="BaseResultMap" type="com.morrow.modules.sys.entity.SysDept">
         <id column="id" property="id" />
+        <result column="pid" property="pid" />
+        <result column="pids" property="pids" />
         <result column="name" property="name" />
-        <result column="parent_id" property="parentId" />
-        <result column="order_num" property="orderNum" />
-        <result column="create_by" property="createBy" />
-        <result column="create_time" property="createTime" />
-        <result column="last_update_by" property="lastUpdateBy" />
-        <result column="last_update_time" property="lastUpdateTime" />
-        <result column="del_flag" property="delFlag" />
+        <result column="sort" property="sort" />
+        <result column="creator" property="creator" />
+        <result column="create_date" property="createDate" />
+        <result column="updater" property="updater" />
+        <result column="update_date" property="updateDate" />
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        id, name, parent_id, order_num, create_by, create_time, last_update_by, last_update_time, del_flag
+        id, pid, pids, name, sort, creator, create_date, updater, update_date
     </sql>
 
 </mapper>

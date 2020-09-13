@@ -29,10 +29,12 @@
         <fastjson.version>1.2.73</fastjson.version>
         <lombok.version>1.18.12</lombok.version>
         <commons.lang.version>3.11</commons.lang.version>
-
+        <guava.version>23.0</guava.version>
         <velocity.version>2.2</velocity.version>
         <freemarker.version>2.3.30</freemarker.version>
         <swagger.version>3.0.0</swagger.version>
+        <hutool.version>5.4.2</hutool.version>
+        <kaptcha.version>2.3.2</kaptcha.version>
     </properties>
 
 
@@ -49,6 +51,11 @@
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-boot-starter</artifactId>
             <version>${mybatisplus.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
         </dependency>
 
         <dependency>
@@ -85,10 +92,30 @@
             <scope>provided</scope>
         </dependency>
 
+
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>${hutool.version}</version>
+        </dependency>
+
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
             <version>${commons.lang.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>${guava.version}</version>
+        </dependency>
+
+        <!-- kaptcha 验证码 -->
+        <dependency>
+            <groupId>com.github.penggle</groupId>
+            <artifactId>kaptcha</artifactId>
+            <version>${kaptcha.version}</version>
         </dependency>
 
 

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.morrow.modules.log.mapper.SysLogLoginMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.morrow.modules.log.entity.SysLogLogin">
+        <id column="id" property="id" />
+        <result column="operation" property="operation" />
+        <result column="status" property="status" />
+        <result column="user_agent" property="userAgent" />
+        <result column="ip" property="ip" />
+        <result column="creator_name" property="creatorName" />
+        <result column="creator" property="creator" />
+        <result column="create_date" property="createDate" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, operation, status, user_agent, ip, creator_name, creator, create_date
+    </sql>
+
+</mapper>

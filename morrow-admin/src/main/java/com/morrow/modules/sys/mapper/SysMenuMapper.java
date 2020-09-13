@@ -10,7 +10,7 @@ import org.apache.ibatis.annotations.Mapper;
  * </p>
  *
  * @author morrow
- * @since 2020-09-05
+ * @since 2020-09-13
  */
 @Mapper
 public interface SysMenuMapper extends BaseMapper<SysMenu> {

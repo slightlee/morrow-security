@@ -9,7 +9,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * </p>
  *
  * @author morrow
- * @since 2020-09-05
+ * @since 2020-09-13
  */
 public interface SysMenuService extends IService<SysMenu> {
 

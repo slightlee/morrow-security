@@ -6,11 +6,11 @@ import org.apache.ibatis.annotations.Mapper;
 
 /**
  * <p>
- * 机构管理 Mapper 接口
+ * 部门管理 Mapper 接口
  * </p>
  *
  * @author morrow
- * @since 2020-09-05
+ * @since 2020-09-13
  */
 @Mapper
 public interface SysDeptMapper extends BaseMapper<SysDept> {

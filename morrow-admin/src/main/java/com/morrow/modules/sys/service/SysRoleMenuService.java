@@ -5,11 +5,11 @@ import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
  * <p>
- * 角色与菜单对应关系 服务类
+ * 角色菜单关系 服务类
  * </p>
  *
  * @author morrow
- * @since 2020-09-05
+ * @since 2020-09-13
  */
 public interface SysRoleMenuService extends IService<SysRoleMenu> {
 

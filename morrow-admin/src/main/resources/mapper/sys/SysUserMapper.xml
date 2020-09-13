@@ -5,23 +5,25 @@
     <!-- 通用查询映射结果 -->
     <resultMap id="BaseResultMap" type="com.morrow.modules.sys.entity.SysUser">
         <id column="id" property="id" />
-        <result column="name" property="name" />
+        <result column="username" property="username" />
         <result column="password" property="password" />
-        <result column="salt" property="salt" />
+        <result column="real_name" property="realName" />
+        <result column="head_url" property="headUrl" />
+        <result column="gender" property="gender" />
         <result column="email" property="email" />
         <result column="mobile" property="mobile" />
-        <result column="status" property="status" />
         <result column="dept_id" property="deptId" />
-        <result column="create_by" property="createBy" />
-        <result column="create_time" property="createTime" />
-        <result column="last_update_by" property="lastUpdateBy" />
-        <result column="last_update_time" property="lastUpdateTime" />
-        <result column="del_flag" property="delFlag" />
+        <result column="super_admin" property="superAdmin" />
+        <result column="status" property="status" />
+        <result column="creator" property="creator" />
+        <result column="create_date" property="createDate" />
+        <result column="updater" property="updater" />
+        <result column="update_date" property="updateDate" />
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        id, name, password, salt, email, mobile, status, dept_id, create_by, create_time, last_update_by, last_update_time, del_flag
+        id, username, password, real_name, head_url, gender, email, mobile, dept_id, super_admin, status, creator, create_date, updater, update_date
     </sql>
 
 </mapper>
