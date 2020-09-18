@@ -10,7 +10,7 @@ spring:
     username: root
     password: 123456
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/morrow-admin?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    url: jdbc:mysql://127.0.0.1:3306/morrow-admin?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
     initialSize: 5
     minIdle: 5
     maxActive: 20
@@ -32,10 +32,12 @@ spring:
 # 是否开启redis缓存  true开启   false关闭
 morrow.redis.open: false
 
+swagger.enable: true
+
 # mybaits-plus配置
 mybatis-plus:
   # MyBatis Mapper所对应的XML文件位置
-  mapper-locations: classpath*:/mapper/*Mapper.xml
+  mapper-locations: classpath*:/mapper/*/*Mapper.xml
   #实体扫描，多个package用逗号或者分号分隔
   typeAliasesPackage: com.flong.springboot.modules.entity
   global-config:

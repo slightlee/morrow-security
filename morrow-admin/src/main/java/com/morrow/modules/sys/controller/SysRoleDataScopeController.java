@@ -1,6 +1,7 @@
 package com.morrow.modules.sys.controller;
 
 
+import io.swagger.annotations.Api;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import org.springframework.web.bind.annotation.RestController;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/sys/roleData")
+@Api(tags = "角色数据管理")
 public class SysRoleDataScopeController {
 
 }

@@ -17,6 +17,15 @@
         id, user_id, token, expire_date, update_date, create_date
     </sql>
 
+    <select id="getByToken" resultType="com.morrow.modules.security.entity.SysUserToken">
+		select * from sys_user_token where token = #{value}
+	</select>
+
+    <select id="getByUserId" resultType="com.morrow.modules.security.entity.SysUserToken">
+		select * from sys_user_token where user_id = #{value}
+	</select>
+
+
     <update id="updateToken">
 		update sys_user_token set token = #{token} where user_id = #{userId}
 	</update>

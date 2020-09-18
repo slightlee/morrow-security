@@ -1,4 +1,4 @@
-package com.morrow.modules.security.password;
+package com.morrow.modules.security.oauth2;
 
 import com.morrow.common.exception.CdException;
 

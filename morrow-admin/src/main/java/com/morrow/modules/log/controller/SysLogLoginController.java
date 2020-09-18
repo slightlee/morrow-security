@@ -1,6 +1,7 @@
 package com.morrow.modules.log.controller;
 
 
+import io.swagger.annotations.Api;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -13,7 +14,8 @@ import org.springframework.web.bind.annotation.RestController;
  * @since 2020-09-07
  */
 @RestController
-@RequestMapping("/log/sys-log-login")
+@RequestMapping("/log/logLogin")
+@Api(tags = "登录日志管理")
 public class SysLogLoginController {
 
 }

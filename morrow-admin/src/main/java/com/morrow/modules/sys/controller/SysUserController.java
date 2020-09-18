@@ -30,7 +30,7 @@ public class SysUserController {
 
 
     @GetMapping("/list")
-    @ApiOperation("列表")
+    @ApiOperation("用户列表")
     public Object list(){
         List<SysUser> list = sysUserService.list();
         return list;

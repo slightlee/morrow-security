@@ -2,19 +2,16 @@ package com.morrow.modules.security.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.morrow.common.constant.Constant;
 import com.morrow.common.util.DateUtil;
 import com.morrow.common.util.Result;
 import com.morrow.modules.security.entity.SysUserToken;
 import com.morrow.modules.security.mapper.SysUserTokenMapper;
-import com.morrow.modules.security.password.TokenGenerator;
+import com.morrow.modules.security.oauth2.TokenGenerator;
 import com.morrow.modules.security.service.SysUserTokenService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * <p>
@@ -78,10 +75,8 @@ public class SysUserTokenServiceImpl extends ServiceImpl<SysUserTokenMapper, Sys
             this.updateById(userToken);
         }
 
-        Map<String, Object> map = new HashMap<>(2);
-        map.put(Constant.TOKEN_HEADER, token);
-        map.put("expire", EXPIRE);
-        return Result.ok().put("map",map);
+        Result result = Result.ok().put("token", token).put("expire", EXPIRE);
+        return result;
     }
 
     @Override

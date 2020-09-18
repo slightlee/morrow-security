@@ -16,5 +16,9 @@ import org.apache.ibatis.annotations.Param;
 @Mapper
 public interface SysUserTokenMapper extends BaseMapper<SysUserToken> {
 
+    SysUserToken getByToken(String token);
+
+    SysUserToken getByUserId(Long userId);
+
     void updateToken(@Param("userId") Long userId, @Param("token") String token);
 }

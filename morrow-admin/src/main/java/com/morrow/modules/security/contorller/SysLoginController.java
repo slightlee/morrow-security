@@ -14,11 +14,12 @@ import com.morrow.modules.log.service.SysLogLoginService;
 import com.morrow.modules.security.dto.LoginDto;
 import com.morrow.modules.security.password.PasswordUtils;
 import com.morrow.modules.security.service.CaptchaService;
+import com.morrow.modules.security.service.SysUserTokenService;
+import com.morrow.modules.sys.controller.AbstractController;
 import com.morrow.modules.sys.dto.SysUserDTO;
 import com.morrow.modules.sys.entity.SysUser;
 import com.morrow.modules.sys.enums.UserStatusEnum;
 import com.morrow.modules.sys.service.SysUserService;
-import com.morrow.modules.security.service.SysUserTokenService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
@@ -33,12 +34,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.time.LocalDateTime;
-import java.util.Map;
-
-//import com.morrow.modules.security.dto.LoginBean;
 
 /**
- * TODO
+ * 登录
  *
  * @Author Tomorrow
  * @Date 2020/9/6 1:07 上午
@@ -46,7 +44,7 @@ import java.util.Map;
 @RestController
 @RequestMapping("/sys")
 @Api(tags = "登录")
-public class SysLoginController {
+public class SysLoginController extends AbstractController {
 
     @Autowired
     private SysUserService sysUserService;
@@ -86,13 +84,14 @@ public class SysLoginController {
         String password = loginDto.getPassword();
 
         //验证码是否正确
-//        boolean flag = captchaService.validate(loginBean.getUuid(), loginBean.getCaptcha());
-//        if (!flag) {
-//            return new Result().error(ErrorCode.CAPTCHA_ERROR);
-//        }
+        boolean flag = captchaService.validate(loginDto.getUuid(), loginDto.getCaptcha());
+        if (!flag) {
+            return Result.error("验证码不正确");
+        }
 
         SysLogLogin sysLog = new SysLogLogin();
         sysLog.setOperation(LoginOperationEnum.LOGIN.value());
+        System.out.println(LocalDateTime.now());
         sysLog.setCreateDate(LocalDateTime.now());
         sysLog.setIp(IpUtils.getIpAddr(request));
         sysLog.setUserAgent(request.getHeader(HttpHeaders.USER_AGENT));
@@ -136,11 +135,19 @@ public class SysLoginController {
         sysLog.setCreatorName(user.getUsername());
         sysLogLoginService.save(sysLog);
         Result token = sysUserTokenService.createToken(user.getId());
-        Map<String,Object> map = (Map<String, Object>) token.get("map");
-        user.setToken((String) map.get("token"));
-        user.setExpire((Integer) map.get("expire"));
 
-        return Result.ok().put("user",user);
+        return token;
 
     }
+
+
+    /**
+     * 退出
+     */
+    @PostMapping("/sys/logout")
+    public Result logout() {
+        sysUserTokenService.logout(getUserId());
+        return Result.ok();
+    }
+
 }
